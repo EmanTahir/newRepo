@@ -120,11 +120,11 @@ async def update_user(user: UserUpdate):
     return await find_user_by_id(user.id)
 
 
-@app.delete("users/{user_id}")
-async def delete_user(user: UserDelete):
-    query = users.delete().where(users.c.id == int(user.id))
-    await database.execute(query)
-    return {
-        "status": True,
-        "message": "This user has been deleted successfully"
-    }
+# @app.delete("users/{user_id}")
+# async def delete_user(user: UserDelete):
+#     query = users.delete().where(users.c.id == int(user.id))
+#     await database.execute(query)
+#     return {
+#         "status": True,
+#         "message": "This user has been deleted successfully"
+#     }
